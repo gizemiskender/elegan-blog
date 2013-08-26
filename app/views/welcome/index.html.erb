@@ -1,0 +1,24 @@
+<table>
+
+  <tr>
+    <td>
+      <h2>Son Yazilar</h2>
+      <ul>
+        <% @posts.each do |post| %>
+            <li><%= link_to post.title, post %></li>
+        <% end %>
+      </ul>
+      <%= link_to 'Tum Yazılar', posts_path %>
+    </td>
+
+    <td>
+      <h2>Son Yorumlar</h2>
+      <ul>
+        <% @comments.each do |comment| %>
+            <li><%= link_to comment.comment, post_path(comment.post_id) %></li>
+
+        <% end %>
+      </ul></td>
+  </tr>
+</table>
+
